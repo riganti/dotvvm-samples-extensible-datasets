@@ -1,0 +1,59 @@
+﻿@viewModel DataSetsDemo.ViewModels.AppendablePagerViewModel, DataSetsDemo
+@masterPage Views/Layout.dotmaster
+@service service = DataSetsDemo.ViewModels.GitHubNextTokenService
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1 class="display-1 m-4">AppendableDataPager</h1>
+
+    <dot:Repeater DataSource="{value: Issues}">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>#{{value: Number}}</h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{value: Title}}</h5>
+                <p class="card-text">{{value: State}}</p>
+                <p class="card-text">
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                </p>
+            </div>
+        </div>
+    </dot:Repeater>
+
+    <dot:AppendableDataPager DataSet="{value: Issues}"
+                             LoadData="{staticCommand: service.LoadIssuesSlow}">
+        <LoadingTemplate>
+            <div class="card mb-4" aria-hidden="true">
+                <div class="card-header">
+                    <h5 class="placeholder col-6"></h5>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title placeholder-glow">
+                        <span class="placeholder col-6"></span>
+                    </h5>
+                    <p class="card-text placeholder-glow">
+                        <span class="placeholder col-7"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-4"></span>
+                        <span class="placeholder col-6"></span>
+                        <span class="placeholder col-8"></span>
+                    </p>
+                </div>
+            </div>
+        </LoadingTemplate>
+        <LoadTemplate>
+            <dot:Button Text="Load more" Click="{staticCommand: _dataPager.Load()}"
+                        class="btn btn-secondary"/>
+        </LoadTemplate>
+        <EndTemplate>
+            There is no more data to load.
+        </EndTemplate>
+    </dot:AppendableDataPager>
+
+</dot:Content>
+

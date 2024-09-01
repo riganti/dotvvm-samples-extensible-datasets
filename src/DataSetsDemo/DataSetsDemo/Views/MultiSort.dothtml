@@ -1,0 +1,59 @@
+﻿@viewModel DataSetsDemo.ViewModels.MultiSortViewModel, DataSetsDemo
+@masterPage Views/Layout.dotmaster
+@service service = DataSetsDemo.ViewModels.ProductMultiSortDatabaseService
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1 class="display-1 m-4">Multi-criteria sorting DataSet</h1>
+
+    <div>
+        Sort criteria:
+        <dot:Repeater DataSource="{value: Products.SortingOptions.Criteria}" WrapperTagName="span">
+            <ItemTemplate>
+                {{value: SortExpression}} {{value: SortDescending ? "DESC": ""}}
+                <dot:LinkButton Click="{command: _root.Products.SortingOptions.Criteria.RemoveAt(_index)}">
+                    ❌
+                </dot:LinkButton>
+            </ItemTemplate>
+            <SeparatorTemplate>, </SeparatorTemplate>
+        </dot:Repeater>
+    </div>
+
+    <dot:GridView DataSource="{value: Products}" class="table table-bordered"
+                  LoadData="{staticCommand: service.LoadProducts}">
+        <Columns>
+            <dot:GridViewTemplateColumn>
+                <img src="{value: ImageUrl}" alt="{value: Name}" style="width: 200px" />
+            </dot:GridViewTemplateColumn>
+
+            <dot:GridViewTextColumn ValueBinding="{value: Name}"
+                                    HeaderText="Product name"
+                                    AllowSorting="true" />
+
+            <dot:GridViewTextColumn ValueBinding="{value: Description}"
+                                    HeaderText="Description"
+                                    AllowSorting="true" />
+
+            <dot:GridViewTextColumn ValueBinding="{value: Price}"
+                                    HeaderText="Price"
+                                    FormatString="c2"
+                                    AllowSorting="true" />
+
+            <dot:GridViewTemplateColumn>
+                <span class="badge text-bg-success"
+                      Visible="{value: InStock}">In stock</span>
+                <span class="badge text-bg-secondary"
+                      Visible="{value: !InStock}">Out of stock</span>
+            </dot:GridViewTemplateColumn>
+        </Columns>
+    </dot:GridView>
+
+    <dot:DataPager DataSet="{value: Products}"
+                   LoadData="{staticCommand: service.LoadProducts}"
+                   class="pagination"
+                   RenderLinkForCurrentPage="true"
+                   ListItemClass="page-item"
+                   LinkClass="page-link" />
+
+</dot:Content>
+

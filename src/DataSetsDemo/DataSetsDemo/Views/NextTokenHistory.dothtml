@@ -1,0 +1,23 @@
+﻿@viewModel DataSetsDemo.ViewModels.NextTokenHistoryViewModel, DataSetsDemo
+@masterPage Views/Layout.dotmaster
+@service service = DataSetsDemo.ViewModels.GitHubNextTokenHistoryService
+
+<dot:Content ContentPlaceHolderID="MainContent">
+
+    <h1 class="display-1 m-4">DataSet with NextTokenHistory paging</h1>
+
+    <dot:DataPager DataSet="{value: Issues}"
+                   LoadData="{staticCommand: service.LoadIssues}"
+                   RenderLinkForCurrentPage="true"
+                   class="pagination"
+                   ListItemClass="page-item"
+                   LinkClass="page-link" />
+    <dot:GridView DataSource="{value: Issues}" class="table table-bordered">
+        <dot:GridViewTextColumn ValueBinding="{value: Id}" HeaderText="Id" />
+        <dot:GridViewTextColumn ValueBinding="{value: Number}" HeaderText="Number" />
+        <dot:GridViewTextColumn ValueBinding="{value: Title}" HeaderText="Title" />
+        <dot:GridViewTextColumn ValueBinding="{value: State}" HeaderText="State" />
+    </dot:GridView>
+
+</dot:Content>
+

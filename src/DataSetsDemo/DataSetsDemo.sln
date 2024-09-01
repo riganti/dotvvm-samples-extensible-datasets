@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSetsDemo", "DataSetsDemo\DataSetsDemo.csproj", "{56CCEDCB-5EE1-4656-A480-24D31462EAE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dotvvm", "dotvvm", "{45DD04EC-08A6-44C1-BA9A-22E41533CA11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Framework.Hosting.AspNetCore", "..\..\dotvvm\src\Framework\Hosting.AspNetCore\DotVVM.Framework.Hosting.AspNetCore.csproj", "{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Framework", "..\..\dotvvm\src\Framework\Framework\DotVVM.Framework.csproj", "{B5AB11A1-D990-4985-BF38-1F3266291FEF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.Core", "..\..\dotvvm\src\Framework\Core\DotVVM.Core.csproj", "{622CCA65-0706-45AA-9BEE-CE34F550CF8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.HotReload.AspNetCore", "..\..\dotvvm\src\Tools\HotReload\AspNetCore\DotVVM.HotReload.AspNetCore.csproj", "{385F805C-36D8-4758-B1A7-F246F7B52CAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotVVM.HotReload", "..\..\dotvvm\src\Tools\HotReload\Common\DotVVM.HotReload.csproj", "{E48EA02D-6D18-4064-9664-2509CBF9106C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56CCEDCB-5EE1-4656-A480-24D31462EAE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CCEDCB-5EE1-4656-A480-24D31462EAE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CCEDCB-5EE1-4656-A480-24D31462EAE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CCEDCB-5EE1-4656-A480-24D31462EAE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5AB11A1-D990-4985-BF38-1F3266291FEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5AB11A1-D990-4985-BF38-1F3266291FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5AB11A1-D990-4985-BF38-1F3266291FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5AB11A1-D990-4985-BF38-1F3266291FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622CCA65-0706-45AA-9BEE-CE34F550CF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622CCA65-0706-45AA-9BEE-CE34F550CF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622CCA65-0706-45AA-9BEE-CE34F550CF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622CCA65-0706-45AA-9BEE-CE34F550CF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385F805C-36D8-4758-B1A7-F246F7B52CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385F805C-36D8-4758-B1A7-F246F7B52CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385F805C-36D8-4758-B1A7-F246F7B52CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385F805C-36D8-4758-B1A7-F246F7B52CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E48EA02D-6D18-4064-9664-2509CBF9106C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E48EA02D-6D18-4064-9664-2509CBF9106C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E48EA02D-6D18-4064-9664-2509CBF9106C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E48EA02D-6D18-4064-9664-2509CBF9106C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2D2F244-6D03-4951-AB5B-CC3DEF9175E8} = {45DD04EC-08A6-44C1-BA9A-22E41533CA11}
+		{B5AB11A1-D990-4985-BF38-1F3266291FEF} = {45DD04EC-08A6-44C1-BA9A-22E41533CA11}
+		{622CCA65-0706-45AA-9BEE-CE34F550CF8E} = {45DD04EC-08A6-44C1-BA9A-22E41533CA11}
+		{385F805C-36D8-4758-B1A7-F246F7B52CAD} = {45DD04EC-08A6-44C1-BA9A-22E41533CA11}
+		{E48EA02D-6D18-4064-9664-2509CBF9106C} = {45DD04EC-08A6-44C1-BA9A-22E41533CA11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A109A6E7-CBBF-472C-8C4D-889BE1F95747}
+	EndGlobalSection
+EndGlobal

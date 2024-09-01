@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>7665285d-6d39-46ed-a71d-48233cdf9f8b</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="**/*.dothtml;**/*.dotmaster;**/*.dotcontrol" Exclude="obj/**/*.*;bin/**/*.*" CopyToPublishDirectory="Always" />
+    <None Remove="**/*.dothtml;**/*.dotmaster;**/*.dotcontrol" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="dotvvm_serialized_config.json.tmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Bogus" Version="35.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\dotvvm\src\Framework\Hosting.AspNetCore\DotVVM.Framework.Hosting.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\..\dotvvm\src\Tools\HotReload\AspNetCore\DotVVM.HotReload.AspNetCore.csproj" />
+  </ItemGroup>
+
+</Project>
